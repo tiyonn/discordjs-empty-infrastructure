@@ -7,7 +7,7 @@ const client = new Discord.Client();
 var prefix = ayarlar.prefix;
 
 client.on("ready", () => {
-  console.log(`**Bot ${client.user.tag} İsmiyle Aktif!**`);
+  console.log(`Bot ${client.user.tag} İsmiyle Aktif!`);
 });
 
 const log = message => {
