@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const client = new Discord.Client();
+const config = require("./config.json");
 
 client.on("ready", () => {
   console.log(`${client.user.tag} İsimli Bot Aktif!`);
@@ -9,11 +10,7 @@ client.on("ready", () => {
 //komutlar
 
 //komutlar
-
 require("./util/eventLoader")(client);
-
-client.login(ayarlar.token);
-
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir("./komutlar/", (err, files) => {
@@ -87,8 +84,8 @@ client.elevation = message => {
   let permlvl = 0;
   if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
   if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
-  if (ayarlar.sahip.includes(message.author.id)) permlvl = 4;
+  if (config.sahip.includes(message.author.id)) permlvl = 4;
   return permlvl;
 };
 
-client.login(ayarlar.token);
+client.login(config.token);
