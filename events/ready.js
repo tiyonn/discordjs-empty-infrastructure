@@ -1,11 +1,6 @@
-const Discord = require('discord.js');
-const moment = require('moment');
-const chalk = require('chalk');
-const { prefix } = require('../ayarlar.json')
-
 module.exports = client => {
   var degisenOynuyor = [
-    "Lunex | V12 Boş"
+    "boş altyapı"
   ]
   
   setInterval(function() {
