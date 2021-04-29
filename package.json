@@ -14,7 +14,7 @@
     "node": "14.x"
   },
   "repository": {
-    "url": "https://github.com/lunexbey/v12bos"
+    "url": "https://github.com/lunexbey/bosaltyapi"
   },
   "license": "MIT",
   "keywords": [
@@ -22,9 +22,5 @@
     "glitch",
     "express"
   ],
-  "author": "lunexdev",
-  "bugs": {
-    "url": "https://github.com/lunexbey/v12bos/issues"
-  },
-  "homepage": "https://github.com/lunexbey/v12bos#readme"
+  "author": "lunexdev"
 }
