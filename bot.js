@@ -1,22 +1,15 @@
 const Discord = require("discord.js");
-const chalk = require("chalk");
 const fs = require("fs");
-const moment = require("moment");
-const ayarlar = require("./ayarlar.json");
 const client = new Discord.Client();
-var prefix = ayarlar.prefix;
 
 client.on("ready", () => {
-  console.log(`Bot ${client.user.tag} İsmiyle Aktif!`);
+  console.log(`${client.user.tag} İsimli Bot Aktif!`);
 });
 
-const log = message => {
-  console.log(`[${moment().format("YYYY-MM-DD HH:mm:ss")}] ${message}`);
-};
-// main komutlarının başı
+//komutlar
 
+//komutlar
 
-// main komutlarının sonu
 require("./util/eventLoader")(client);
 
 client.login(ayarlar.token);
@@ -25,10 +18,10 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir("./komutlar/", (err, files) => {
   if (err) console.error(err);
-  log(`${files.length} komut yüklenecek.`);
+  console.log(`${files.length} komut yüklenecek.`);
   files.forEach(f => {
     let props = require(`./komutlar/${f}`);
-    log(`Yüklenen komut: ${props.help.name}`);
+    console.log(`Yüklenen komut: ${props.help.name}`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -97,18 +90,5 @@ client.elevation = message => {
   if (ayarlar.sahip.includes(message.author.id)) permlvl = 4;
   return permlvl;
 };
-
-var regToken = /[\w\d]{24}\.[\w\d]{6}\.[\w\d-_]{27}/g;
-// client.on('debug', e => {
-//   console.log(chalk.bgBlue.green(e.replace(regToken, 'that was redacted')));
-// });
-
-client.on("warn", e => {
-  console.log(chalk.bgYellow(e.replace(regToken, "that was redacted")));
-});
-
-client.on("error", e => {
-  console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
-});
 
 client.login(ayarlar.token);
