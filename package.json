@@ -13,14 +13,11 @@
   "engines": {
     "node": "14.x"
   },
-  "repository": {
-    "url": "https://github.com/lunexbey/bosaltyapi"
-  },
   "license": "MIT",
   "keywords": [
-    "node",
-    "glitch",
-    "express"
+    "v12",
+    "lunexdev",
+    "boş altyapı"
   ],
   "author": "lunexdev"
 }
