@@ -1,11 +1,11 @@
 module.exports = client => {
-  var degisenOynuyor = [
+  var durums = [
     "boş altyapı"
   ]
   
   setInterval(function() {
-    var degisenOynuyor1 = degisenOynuyor[Math.floor(Math.random() * (degisenOynuyor.length))]
-    client.user.setActivity(`${degisenOynuyor1}`);
+    var durum = durums[Math.floor(Math.random() * (durums.length))]
+    client.user.setActivity(`${durum}`);
 
 }, 2 * 30000);
   
