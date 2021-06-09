@@ -7,9 +7,9 @@ client.on("ready", () => {
   console.log(`${client.user.tag} İsimli Bot Aktif!`);
 });
 
-//komutlar
+//main komutları
 
-//komutlar
+//main komutları
 require("./util/eventLoader")(client);
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
